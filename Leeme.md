@@ -1,4 +1,8 @@
-# Wibeee-Smilics-API-Local
+# Wibeee Smilics API Local XML
+
+![Wibeee_Tarifa_Simulacion_Miller_11Jun-10Jul_2021](https://user-images.githubusercontent.com/19588354/130454156-2bf8dde7-d8fd-4d73-adee-cf10c4e4ab91.jpg)
+
+
 Wibeee-Smilics-API-Local: Recopilación de datos del dispositivo usando la conexión http puerto 80 en modo local, para integrar en nuestra BBDD InfluxDB 2.0
 
 Wibeee y Smilics ambos son dispositivos muy parecidos, sólo que marcas diferentes, uno es de la empresa Circutor y Smilics digamos de la marca hija, la comunicación es ModBus con un lenguaje XML. Wibeee es un analizador de consumo con conexión inalámbrica vía Wifi, muestra los datos instantáneos e històricos del consumo eléctrico mediante cualquier dispositivo Inteligente, Tablet o PC, con ayuda de su app o del servidor web integrado, que si realizamos un escaneo de red local, podremos encontrar la dirección IP que se encuentra asignada. 
