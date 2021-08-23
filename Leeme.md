@@ -1,6 +1,6 @@
 # Wibeee Smilics API Local XML
 
-![Wibeee_Tarifa_Simulacion_Miller_11Jun-10Jul_2021](https://user-images.githubusercontent.com/19588354/130454156-2bf8dde7-d8fd-4d73-adee-cf10c4e4ab91.jpg)
+![wibeee_monofasico_trifasico](https://user-images.githubusercontent.com/19588354/130454200-44406725-0e3f-443d-a4e6-3aaab3fe3efd.jpg)
 
 
 Wibeee-Smilics-API-Local: Recopilación de datos del dispositivo usando la conexión http puerto 80 en modo local, para integrar en nuestra BBDD InfluxDB 2.0
