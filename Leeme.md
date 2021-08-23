@@ -15,7 +15,7 @@ Bien el software que usaremos y que entiendo para aquellos que han trabajado con
 1. NAS, PC, RaspberryPi2, o máquina Virtual instalada en vuestro equipo.
 2. Node-RED, InfluxDB 2.0 y Grafana. (Es necesario tener instalado el sistema operativo Linux, da igual el tipo de Linux). Docker en el caso de si desean utilizar los repositorios existentes, (recomendado).
 
-Bien una vez tengamos todas las herramientas y nuestro hardware listo, podremos iniciar la preparación del código en NodeRed y cómo poder recopilar los datos de nuestro dispositivo LOCAL, sin tener que usar la página web oficial de wibeee.circutor.com o smilics.com/wibeee
+Bien una vez tengamos todas las herramientas y nuestro hardware listo, podremos iniciar la preparación del código en NodeRed y cómo poder recopilar los datos de nuestro dispositivo LOCAL, sin tener que usar la página web oficial de https://wibeee.circutor.com o https://smilics.com/wibeee
 
 El propio dispositivo recopila información cómo decía antes en formato XML mediante una dirección similar a esta:
 
