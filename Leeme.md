@@ -1,6 +1,6 @@
 # Wibeee Smilics API Local XML
 
-![wibeee_monofasico_trifasico](https://user-images.githubusercontent.com/19588354/130454200-44406725-0e3f-443d-a4e6-3aaab3fe3efd.jpg)
+![Wibeee_Smilics_Circutor](https://user-images.githubusercontent.com/19588354/130455986-a089c538-e672-45fc-9eec-ccb2498071fb.jpg)
 
 
 Wibeee-Smilics-API-Local: Recopilación de datos del dispositivo usando la conexión http puerto 80 en modo local, para integrar en nuestra BBDD InfluxDB 2.0
