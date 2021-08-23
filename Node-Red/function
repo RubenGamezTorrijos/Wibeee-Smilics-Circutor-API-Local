@@ -1,0 +1,15 @@
+wibeeecontador={};
+wibeeecontador.VOLTAJE=msg.payload.response.fase1_vrms[0];
+wibeeecontador.INTENSIDAD=msg.payload.response.fase1_irms[0];
+wibeeecontador.POTENCIA_APARENTE=msg.payload.response.fase1_p_aparent[0];
+wibeeecontador.POTENCIA_ACTIVA=msg.payload.response.fase1_p_activa[0];
+wibeeecontador.POTENCIA_REACTIVA_INDUCTIVA=msg.payload.response.fase1_p_reactiva_ind[0];
+wibeeecontador.POTENCIA_REACTIVA_CAPACITIVA=msg.payload.response.fase1_p_reactiva_cap[0];
+wibeeecontador.FRECUENCIA=msg.payload.response.fase1_frecuencia[0];
+wibeeecontador.FACTOR_POTENCIA=msg.payload.response.fase1_factor_potencia[0];
+wibeeecontador.ENERGIA_ACTIVA=msg.payload.response.fase1_energia_activa[0];
+wibeeecontador.ENERGIA_REACTIVA_INDUCTIVA=msg.payload.response.fase1_energia_reactiva_ind[0]*0.001;
+wibeeecontador.ENERGIA_REACTIVA_CAPACITIVA=msg.payload.response.fase1_energia_reactiva_cap[0];
+
+msg.payload=wibeeecontador;
+return msg
