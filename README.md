@@ -24,7 +24,10 @@ Bien una vez tengamos todas las herramientas y nuestro hardware listo, podremos 
 
 El propio dispositivo recopila información cómo decía antes en formato XML mediante una dirección similar a esta:
 
-http://192.168.1.3/en/status.xml
+``
+http://192.168.X.X/en/status.xml
+
+``
 
 Bien y aparece un listado muy extenso, depende del modelo de Wibeee, porque existe con firmware antiguos del 20216 con menos detalles que los actuales.
 
