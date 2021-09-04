@@ -15,6 +15,7 @@ Bien el software que usaremos y que entiendo para aquellos que han trabajado con
 1. NAS, PC, RaspberryPi2, o máquina Virtual instalada en vuestro equipo.
 2. Node-RED, InfluxDB 2.0 y Grafana. (Es necesario tener instalado el sistema operativo Linux, da igual el tipo de Linux). Docker en el caso de si desean utilizar los repositorios existentes, (recomendado).
 
+![20210904_124331](https://user-images.githubusercontent.com/19588354/132091978-a8432bd5-6a46-408d-ab85-eb8742bfb532.jpg)
 
 ![Esquema_InfluxDB2 0_Wibeee_Circutor](https://user-images.githubusercontent.com/19588354/130484463-0f3d7e45-73d9-48ad-96e8-e9fe3408e90f.jpg)
 
