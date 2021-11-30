@@ -1,148 +1,25 @@
 [
     {
-        "id": "ca3991d591150859",
-        "type": "tab",
-        "label": "Wibeee",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "477a8ce8d46fc82d",
-        "type": "inject",
-        "z": "ca3991d591150859",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "10",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payloadType": "date",
-        "x": 130,
-        "y": 160,
-        "wires": [
-            [
-                "58acef715659643d"
-            ]
-        ]
-    },
-    {
-        "id": "58acef715659643d",
+        "id": "2c61bc8dbd1a717f",
         "type": "http request",
-        "z": "ca3991d591150859",
+        "z": "49a4b65fcec6df86",
         "name": "Wibeee (Circutor o Smilics)",
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "http://192.168.1.3/en/status.xml",
+        "url": "http://192.168.X.X/en/status.xml",
         "tls": "",
         "persist": true,
         "proxy": "",
         "authType": "",
         "senderr": false,
+        "credentials": {},
         "x": 380,
         "y": 160,
         "wires": [
             [
-                "5b563306a93c3171"
+                "779ba43d83214417"
             ]
         ]
-    },
-    {
-        "id": "c7b53353cf8e35c7",
-        "type": "debug",
-        "z": "ca3991d591150859",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 790,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "5b563306a93c3171",
-        "type": "xml",
-        "z": "ca3991d591150859",
-        "name": "",
-        "property": "payload",
-        "attr": "",
-        "chr": "",
-        "x": 610,
-        "y": 160,
-        "wires": [
-            [
-                "c7b53353cf8e35c7",
-                "6346c6764853e105"
-            ]
-        ]
-    },
-    {
-        "id": "f0c8e0525e300bce",
-        "type": "debug",
-        "z": "ca3991d591150859",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 1010,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "6346c6764853e105",
-        "type": "function",
-        "z": "ca3991d591150859",
-        "name": "Conversión Datos",
-        "func": "wibeee={};\nwibeee.Voltaje=parseFloat(msg.payload.response.fase1_vrms[0]);\n// A continuación Debes continuar e implementar los datos que que recopile\n// tu dispositivo, depende del firmware msg.payload mostrará unos datos u otros.\n\nmsg.payload=wibeee;\nreturn msg;\n\n// Developed by Rubén Gámez Torrijos\n// Comparte y suscríbete a mi canal. Gracias por tu aporte.",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 810,
-        "y": 160,
-        "wires": [
-            [
-                "f0c8e0525e300bce",
-                "d2038bef94f3362b"
-            ]
-        ]
-    },
-    {
-        "id": "d2038bef94f3362b",
-        "type": "influxdb out",
-        "z": "ca3991d591150859",
-        "influxdb": "",
-        "name": "BBDD 1.8 o Superior",
-        "measurement": "",
-        "precision": "",
-        "retentionPolicy": "",
-        "database": "database",
-        "precisionV18FluxV20": "ms",
-        "retentionPolicyV18Flux": "",
-        "org": "",
-        "bucket": "",
-        "x": 1060,
-        "y": 160,
-        "wires": []
     }
 ]
