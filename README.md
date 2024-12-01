@@ -1,39 +1,60 @@
-# Wibeee Smilics & Circutor API Local XML
+# ⚡Wibeee Smilics & Circutor API Local XML  
 
-![Wibeee_Smilics_Circutor](https://user-images.githubusercontent.com/19588354/130455986-a089c538-e672-45fc-9eec-ccb2498071fb.jpg)
+| Wibeee |
+|:--------:|
+| ![Wibeee-logo](https://github.com/user-attachments/assets/8c8a5418-6109-4138-af2a-9ae9f6a0848b) |
+
+| Smilics | Circutor |
+|:---------:|:----------:|
+| ![collage-Wibeee-01-1024x747](https://github.com/user-attachments/assets/2d748ed6-e6f4-4c33-9c0b-4d2d84fec564) | ![Wibeee_Monofasico_y_Trifasico](https://github.com/user-attachments/assets/119618e7-fc21-4350-9632-c2f426b2b2e6) |
+
+Recopilación de datos del dispositivo **Wibeee: Smilics ó Circutor** usando conexión HTTP por el puerto 80 en modo local, para integrarlos en nuestra base de datos **InfluxDB 2.0** y monitorizarlos con herramientas **Open Source**.  
+
+---
+
+## 💡Introducción  
+
+### ¿Qué es Wibeee?  
+**Wibeee** es un analizador de consumo eléctrico con conexión inalámbrica vía WiFi que permite monitorizar en tiempo real e históricos del consumo eléctrico mediante dispositivos inteligentes, tablets o PCs. La comunicación utiliza el protocolo **ModBus** y lenguaje **XML**.  
+
+### ✅Ventajas de este proyecto:  
+- **Acceso local:** No dependerás de portales externos como [Circutor](http://wibeee.circutor.com) o [Smilics](https://smilics.com/wibeee).  
+- **Datos en tiempo real:** Obtén información sin retardos de entre 1 a 5 minutos típicos de los fabricantes.  
+- **Herramientas Open Source:** Integra los datos directamente en **Node-RED**, **InfluxDB 2.0** y **Grafana**, evitando aplicaciones propietarias.  
+
+---
+
+## 📋Requisitos  
+
+### 👨🏻‍🔧Hardware  
+- **PC local**, **Raspberry Pi**, **Servidor NAS**, o máquina virtual.  
+
+### 🧑🏻‍💻Software  
+- **Docker** (opcional para simplificar la instalación).  
+- **Node-RED** para recopilar y transformar datos.  
+- **InfluxDB 2.0** para almacenamiento.  
+- **Grafana** para visualización avanzada *(opcional).*
+
+| Wibeee monitorizado en InfluxDB 2.0 |
+|:------------:|
+|![Esquema_InfluxDB2 0_Wibeee_Circutor](https://user-images.githubusercontent.com/19588354/130484463-0f3d7e45-73d9-48ad-96e8-e9fe3408e90f.jpg)|
 
 
-Wibeee-Smilics-API-Local: Recopilación de datos del dispositivo usando la conexión http puerto 80 en modo local, para integrar en nuestra BBDD InfluxDB 2.0
+---
 
-Wibeee y Smilics ambos son dispositivos muy parecidos, sólo que marcas diferentes, uno es de la empresa Circutor y Smilics digamos de la marca hija, la comunicación es ModBus con un lenguaje XML. Wibeee es un analizador de consumo con conexión inalámbrica vía Wifi, muestra los datos instantáneos e històricos del consumo eléctrico mediante cualquier dispositivo Inteligente, Tablet o PC, con ayuda de su app o del servidor web integrado, que si realizamos un escaneo de red local, podremos encontrar la dirección IP que se encuentra asignada. 
-Wibeee es muy fácil de instalar, en tan solo unos pocos segundos está montado. Siempre y cuando los recursos necesarios estén correctamente. 
+## 🚀Pasos para la configuración  
 
-Bien, los datos que se van a recopilar del dispositivos no serán por medio de la pagina web oficial, sino vamos a obtenerlos directamente del dispositivo, mediante una solicitud HTTP REQUEST API en formato XML (Lo que es lo mismo lenguaje de marcas), se realizará con las siguiguientes herramientas necesarias y sin coste adicionadl siempre y cuando utilicen su propio PC o Portatil, en caso de querer recopilar los datos de forma continua les recomiendo usar un dispositivo llamado RaspberryPi o bien una NAS, para aquellos que necesiten más información o desconozcan los recursos, pueden ponerse en contacto.
+### 1️⃣ **Configuración de Node-RED**  
 
-Bien el software que usaremos y que entiendo para aquellos que han trabajado con ello, empezaré en base partir de los recursos necesarios tanto de hardware cómo software:
+1. Instala Node-RED en tu dispositivo y accede a su portal web.  
+2. Usa los nodos necesarios para obtener datos del dispositivo mediante su API local.  
+3. Transforma los datos con bloques personalizados y envíalos a tu base de datos (**InfluxDB 2.0** o **MySQL**).  
 
-1. NAS, PC, RaspberryPi2, o máquina Virtual instalada en vuestro equipo.
-2. Node-RED, InfluxDB 2.0 y Grafana. (Es necesario tener instalado el sistema operativo Linux, da igual el tipo de Linux). Docker en el caso de si desean utilizar los repositorios existentes, (recomendado).
+| **Ejemplo de configuración en Node-RED:** |
+|------------------------------------------|
+|![Node-RED Ejemplo](https://user-images.githubusercontent.com/19588354/131037062-941eae52-ec44-4759-b664-f097da05b6e8.jpg)|  
 
-![20210904_124331](https://user-images.githubusercontent.com/19588354/132091978-a8432bd5-6a46-408d-ab85-eb8742bfb532.jpg)
-
-![Esquema_InfluxDB2 0_Wibeee_Circutor](https://user-images.githubusercontent.com/19588354/130484463-0f3d7e45-73d9-48ad-96e8-e9fe3408e90f.jpg)
-
-
-
-Bien una vez tengamos todas las herramientas y nuestro hardware listo, podremos iniciar la preparación del código en NodeRed y cómo poder recopilar los datos de nuestro dispositivo LOCAL, sin tener que usar la página web oficial de https://wibeee.circutor.com o https://smilics.com/wibeee
-
-El propio dispositivo recopila información cómo decía antes en formato XML mediante una dirección similar a esta:
-
-```
+#### 🔗 URLs de la API del dispositivo:  
+- **Datos en tiempo real:**  
+```http
 http://192.168.X.X/en/status.xml
-
-```
-
-Bien y aparece un listado muy extenso, depende del modelo de Wibeee, porque existe con firmware antiguos del 20216 con menos detalles que los actuales.
-
-Estos datos vamos aprender cómo recopilarlos y obtenerlos desde Node-RED que es una de las herramientas más útilices hoy en día de software libre.
-
-La solicitud que se utilizan es REST que quiere decir que recope esa información y una vez obtenida con esta solicitud, nos ayudará a poder transformar esos datos con una función personalizada para así enviarla a nuestra BBDD InfluxDB 2.0 (Existen versiones anteriores, pero en este caso se realizará con la más actualizada). Estos scripts nos ayudan a coger los datos de varios dispositivos Wibeee con los siguientes métodos: modbus y HTTP XML y guardarlos en una base de datos MySQL o InfluxDB para luego poder tratarlos o visializarlos en Grafana, sin necesidad de enviar nuestros datos a aplicaciones externas, cómo es en este caso http://wibeee.circutor.com o https://smilics.com/wibeee.
-
-Con esto conseguimos una monitorización mucho más real e instantanea para tomar decisiones de nuestros consumos en casa, y no tener que guardar nuestra información en las aplicaciones de terceros que suelen tener un retardo de 1 a 5 min. Dependiendo del dispositivo o fabricante.
