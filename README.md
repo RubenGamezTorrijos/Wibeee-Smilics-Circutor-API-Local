@@ -56,5 +56,6 @@ Recopilación de datos del dispositivo **Wibeee: Smilics ó Circutor** usando co
 
 #### 🔗 URLs de la API del dispositivo:  
 - **Datos en tiempo real:**  
-```http
+```
 http://192.168.X.X/en/status.xml
+```
